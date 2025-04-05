@@ -17,7 +17,6 @@ const Layout = () => {
 
   return (
     <div className="app-container">
-      {/* Mobile menu icons */}
       <div className="mobile-icons">
         <span className="icon" onClick={() => setShowNavbar(prev => !prev)}>
           <IoMdMenu />
@@ -27,7 +26,6 @@ const Layout = () => {
         </span>
       </div>
 
-      {/* Mobile Navigation */}
       {showNavbar && (
         <div className="mobile-navbar">
           <Navigation
@@ -37,17 +35,13 @@ const Layout = () => {
         </div>
       )}
 
-      {/* Desktop Navigation */}
       <div className="desktop-navbar">
         <Navigation
           selectedCategories={selectedCategories}
           setSelectedCategories={setSelectedCategories}
         />
       </div>
-
-      {/* Main layout area */}
       <div className="main-content">
-        {/* Sidebar for filters */}
         <div className={`sidebar-wrapper ${showSidebar ? "open" : ""}`}>
           <Sidebar
             selectedCategories={selectedCategories}
@@ -60,8 +54,6 @@ const Layout = () => {
             setRating={setRating}
           />
         </div>
-
-        {/* Page content */}
         <div className="page-content">
           <Outlet
             context={{
