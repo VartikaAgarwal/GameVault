@@ -48,7 +48,6 @@ const Sidebar = ({
     setSelectedTags([]);
   };
 
-  // ✅ FIX: Destructure start and end year from releaseYear
   const [startYear, endYear] = releaseYear || [1990, 2025];
 
   return (
@@ -115,7 +114,6 @@ const Sidebar = ({
 
       <div className="filter-section">
         <h4 className="filter-heading">Release Year</h4>
-        {/* ✅ Dynamic range display */}
         <p className="release-year-range">{startYear} - {endYear}</p>
         <input
           type="range"
