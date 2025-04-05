@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  favorites: [], // Array of bookmarked games
+  favorites: [], 
 };
 
 const bookmarkSlice = createSlice({
