@@ -3,17 +3,15 @@ import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import GameCard from "../components/GameCard.jsx";
 import { Button } from "react-bootstrap";
-import { removeBookmark } from "../redux/bookmarkSlice"; // Import action
+import { removeBookmark } from "../redux/bookmarkSlice"; 
 import "../styles/global.css";
 
 const Library = () => {
   const favorites = useSelector((state) => state.bookmarks.favorites);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
-  // Clear library function
   const clearLibrary = () => {
-    favorites.forEach((game) => dispatch(removeBookmark(game.id))); // Remove all bookmarks
+    favorites.forEach((game) => dispatch(removeBookmark(game.id))); 
   };
 
   return (
