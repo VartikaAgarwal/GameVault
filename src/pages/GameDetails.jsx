@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import "../styles/Global.css"; // Add styles if needed
+import "../styles/Global.css";
 
 const GameDetails = () => {
-  const { id } = useParams(); // Get game ID from URL
+  const { id } = useParams(); 
   const [game, setGame] = useState(null);
 
   useEffect(() => {
