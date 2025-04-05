@@ -1,0 +1,595 @@
+html, body {
+  overflow-x: hidden;
+}
+
+body {
+  padding-block-start: 4rem; 
+  font-size: 1rem;
+  margin: 0;
+  background-color: black;
+}
+
+.navbar {
+  background-color: black !important;
+  padding: 10px 0px;
+  inline-size: 100vw;
+  position: fixed;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+}
+
+
+
+.bookmark-count {
+  background: red;
+  padding: 2px 5px;
+  border-radius: 50%;
+  position: absolute;
+  inset-block-start: -5px;
+  inset-inline-end: -5px;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-decoration: none;
+  margin-inline-start: 10px;
+}
+
+.game-icon {
+  color: #635bff;
+  font-size: 2rem;
+  margin-inline-end: 8px;
+}
+
+.game-text {
+  color: white;
+}
+
+.vault-text {
+  color: #635bff;
+}
+
+.search-wrapper {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  inline-size: 100%;
+  max-inline-size: 100%;
+  margin: 0 auto;
+}
+
+.search-container {
+  display: flex;
+  background-color: #333;
+  border-radius: 20px;
+  padding: 5px 10px;
+  align-items: center;
+  inline-size: 100%;
+  max-inline-size: 100%;
+}
+
+.search-input {
+  flex: 1;
+  background-color: transparent;
+  border: none;
+  padding: 10px 15px;
+  color: white;
+  outline: none;
+}
+
+.search-button {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+
+
+.search-button:hover {
+  color: #14c99c;
+}
+
+.right-buttons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-inline-start: auto;
+}
+
+.library-btn {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background-color: #333;
+  color: white;
+  border-radius: 20px;
+  text-decoration: none;
+  position: relative;
+  font-weight: 500;
+  transition: 0.3s;
+  font-size: 0.9rem;
+}
+
+.library-btn:hover {
+  background-color: #444;
+}
+
+.library-icon {
+  margin-inline-end: 6px;
+  color: #14c99c;
+}
+
+.signin-btn {
+  background-color: #635bff;
+  border: none;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.signin-btn:hover {
+  background-color: #534ae8;
+}
+
+.user-button-container {
+  display: flex;
+  align-items: center;
+}
+
+.sidebar {
+  inline-size: 250px;
+  background-color: #181818;
+  color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.sidebar-title {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.filter-heading {
+  font-size: 18px;
+  margin-block-start: 15px;
+}
+
+.filter-list {
+  list-style: none;
+  padding: 0;
+}
+
+.filter-list li {
+  margin-block-end: 10px;
+}
+
+.filter-list input {
+  margin-inline-end: 8px;
+}
+
+
+.show-more-link {
+  color: #3498db;
+  cursor: pointer;
+  text-decoration: underline;
+  display: block;
+  margin-block-start: 5px;
+}
+
+.show-more-link:hover {
+  color: #2980b9;
+}
+
+.release-year-range {
+  font-weight: bold;
+  margin-block-end: 5px;
+}
+
+.rating-stars {
+  display: flex;
+  gap: 5px;
+}
+
+.star-icon {
+  font-size: 20px;
+  cursor: pointer;
+  color: #ccc;
+  transition: color 0.3s ease;
+}
+
+.star-icon.active {
+  color: #ffcc00;
+}
+
+.star-icon:hover {
+  color: #ffcc00;
+}
+
+.slider-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-block-start: 5px;
+}
+
+.slider {
+  inline-size: 80%;
+  accent-color: #007bff;
+}
+
+
+.filter-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-block-start: 15px;
+}
+
+.reset-filters {
+  background-color: blue;  
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.reset-filters:hover {
+  background-color: #c0392b;
+}
+
+
+.game-grid-container {
+  inline-size: 100%;
+  max-inline-size: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+  overflow-y: auto; 
+  max-block-size: calc(100vh - 100px);
+}
+
+.discover-title {
+  font-size: clamp(1.5rem, 2vw + 1rem, 2.5rem);
+  font-weight: bold;
+  margin-block-end: 5px;
+  color: white;
+}
+
+.game-count {
+  font-size: 1.2rem;
+  color: gray;
+}
+
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+  gap: 1rem;
+  inline-size: 100%;
+  max-inline-size: 1400px;
+  margin: 0 auto;
+}
+
+.game-card {
+  background: #161616;
+  color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  padding: 10px;
+  inline-size: 100%;
+}
+.game-card:hover {
+  transform: scale(1.05);
+}
+
+.game-image-container {
+  position: relative;
+}
+
+.game-image {
+  inline-size: 100%;
+  border-radius: 10px;
+  block-size: 180px;
+  object-fit: cover;
+}
+
+
+.bookmark-icon {
+  position: absolute;
+  inset-block-start: 10px;
+  inset-inline-end: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 5px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.rating-box {
+  background: black;
+  color: yellow;
+  padding: 4px 8px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border-radius: 6px;
+  position: absolute;
+  inset-block-end: 10px;
+  inset-inline-start: 10px;
+}
+
+.game-genres {
+  margin: 5px 0;
+}
+
+.genre-pill {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 12px;
+  margin-inline-end: 5px;
+  display: inline-block;
+}
+
+.game-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-block-start: 10px;
+}
+
+
+.game-rating {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background-color: #0f0f10;
+}
+
+.release-date {
+  font-size: 0.9rem;
+  color: gray;
+  margin-block-start: 5px;
+}
+
+.view-details {
+  color: #14c99c;
+  font-size: 0.9rem;
+  cursor: pointer;
+  margin-block-start: 10px;
+}
+
+.view-details:hover {
+  text-decoration: underline;
+}
+
+.game-details {
+  text-align: center;
+  padding: 20px;
+  color: white;
+}
+.game-images {
+  inline-size: 40%;
+  max-inline-size: 300px;
+  border-radius: 10px;
+}
+
+.back-btn {
+  background-color: yellow;
+}
+
+
+.pagination {
+  margin-block-start: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.pagination button {
+  background-color: #222;
+  color: white;
+  border: 1px solid gray;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.pagination button:hover {
+  background-color: #00b894;
+}
+
+.pagination button.active {
+  background-color: #00b894;
+}
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-block-size: 100vh; 
+  overflow: auto; 
+}
+
+
+.main-content {
+  display: flex;
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+
+.sidebar {
+  inline-size: 20%;
+  max-block-size: 100vh;
+  overflow-y: auto;
+  border-inline-end: 2px solid #ddd;
+  min-inline-size: 200px;
+}
+
+
+.page-content {
+  flex: 1;
+  overflow-y: auto; 
+  padding: 20px;
+}
+
+
+
+.library-container {
+  padding: 20px;
+  color: white;
+  background-color: #222;
+}
+
+.library-buttons {
+  display: flex;
+  gap: 20px;
+  margin-block-end: 20px;
+}
+
+.add-more-btn {
+  background-color: #222;
+  color: white;
+  border-radius: 5px;
+  padding: 10px 15px;
+}
+
+.clear-library-btn {
+  background-color: #d32f2f;
+  color: white;
+  border-radius: 5px;
+  padding: 10px 15px;
+}
+
+.game-grids {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  inline-size: 100%;
+  max-inline-size: 1200px;
+  margin: 0 auto;
+}
+
+
+.main-container {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.sidebar-wrapper {
+  inline-size: 20%;
+  min-inline-size: 200px;
+}
+
+.gamegrid-wrapper {
+  flex: 1;
+}
+
+
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+    .main-container {
+    flex-direction: column;
+  }
+
+  .sidebar-wrapper,
+  .gamegrid-wrapper {
+    inline-size: 100%;
+  }
+
+  .right-buttons {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .sidebar {
+    inline-size: 100%;
+    order: 2;
+  }
+
+  .main-content {
+    flex-direction: column;
+  }
+
+  .game-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .game-images {
+    inline-size: 80%;
+  }
+
+  .game-grid-container {
+    padding: 1rem;
+  }
+}
+
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  .search-wrapper {
+    max-inline-size: 80%;
+  }
+
+  .sidebar {
+    inline-size: 30%;
+  }
+
+  .game-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+
+  .game-images {
+    inline-size: 60%;
+  }
+}
+
+
+@media (min-width: 1025px) {
+  .sidebar {
+    inline-size: 20%;
+  }
+
+  .game-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  .search-wrapper {
+    max-inline-size: 500px;
+  }
+
+  .game-images {
+    inline-size: 40%;
+  }
+}
+
+
+
+
+
+
+
+
