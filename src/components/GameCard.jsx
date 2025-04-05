@@ -18,8 +18,6 @@ const GameCard = ({ game }) => {
       dispatch(addBookmark(game));
     }
   };
-
-  // ⭐ Function to Render Star Ratings
   const renderStars = (rating) => {
     const stars = [];
     const fullStars = Math.floor(rating);
