@@ -20,7 +20,7 @@ export const store = configureStore({
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {
-        ignoredPaths: ["register"], // Ignore non-serializable values in 'register'
+        ignoredPaths: ["register"],
       },
     }),
 });
