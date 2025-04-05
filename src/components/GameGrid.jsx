@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useOutletContext } from "react-router-dom";
 import GameCard from "./GameCard.jsx";
-import Pagination from "./Pagination.jsx"; // ✅ Import pagination component
+import Pagination from "./Pagination.jsx"; 
 import "../styles/global.css";
 
 const GameGrid = () => {
@@ -9,7 +9,7 @@ const GameGrid = () => {
   const [games, setGames] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const gamesPerPage = 9;
-  const totalPages = 10; // ✅ Adjust as needed or fetch from API
+  const totalPages = 10; 
 
   useEffect(() => {
     const API_KEY = import.meta.env.VITE_RWAG_KEY;
